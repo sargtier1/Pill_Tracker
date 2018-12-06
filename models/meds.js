@@ -1,9 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Meds = sequelize.define('user', {
+    var Meds = sequelize.define('medications', {
       id: {
         autoIncrement: true,
-        foreignKey: true,
+        primaryKey: true,
         type: DataTypes.INTEGER
       },
       drugName: {
