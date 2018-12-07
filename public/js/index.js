@@ -97,3 +97,28 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+//=============================================================
+
+// ingrids submit form object for jquery
+//=============================================================
+// Handle submit button click
+// $(document).on("click", "#submit-input", function (event) {
+//   // Don't refresh the page!
+//   event.preventDefault();
+
+//   var name = "";
+//   var email = "";
+//   var phone = "";
+//   var dob = "";
+//   var password = "";
+  
+
+//   // Get form entries
+//   name = $("#name-input").val().trim();
+//   email = $("#email-input").val().trim();
+//   phone = $("#phone-input").val().trim();
+//   dob = $("#dob-input").val().trim();
+//   password = $("#password-input").val().trim();
+//=============================================================

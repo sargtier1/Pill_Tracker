@@ -1,8 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "ptdb",
+
+    "password": "Sammyarg1!",
+    "database": "db1",
     "host": "localhost",
     "dialect": "mysql"
   },
