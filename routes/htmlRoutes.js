@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page when first brought to website
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.medications.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   // route to sign up page 
   app.get("/register", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.medications.findAll({}).then(function(dbExamples) {
       res.render("register", {
         msg: "Welcome!",
         examples: dbExamples
@@ -23,7 +23,7 @@ module.exports = function(app) {
 
   //add prescription page
   app.get("/home/add", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.medications.findAll({}).then(function(dbExamples) {
       res.render("addPrescription", {
         msg: "Welcome!",
         examples: dbExamples
@@ -33,7 +33,7 @@ module.exports = function(app) {
 
   // route to display and manage prescriptions
   app.get("/home", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.medications.findAll({}).then(function(dbExamples) {
       res.render("home", {
         msg: "Welcome!",
         examples: dbExamples
@@ -42,8 +42,8 @@ module.exports = function(app) {
   });
 
   //loads page of a single prescription
-  app.get("/home/p", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/home/:name", function(req, res) {
+    db.medications.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("prescription", {
         example: dbExample
       });

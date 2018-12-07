@@ -33,11 +33,13 @@
         <div class="col-8 offset-2">
         <h4>Your Prescriptions:</h4>
             <ul id="prescription-list" class="list-group">
-                {{#each prescription}}
+                {{#each prescriptionDetails}}
                 <li data-id="{{this.name}}" class="list-group-item">
-                <a href="prescription/{{this.name}}">{{this.text}}</a>
-                
-                <button class="btn btn-primary float-right update" id="edit-script-btn">Edit</button>
+                <a href="home/{{this.name}}">{{this.name}}</a>
+                {{this.timeOne}}
+                {{this.timeTwo}}
+                {{this.timeThree}}
+                <button class="btn btn-success float-right update" id="edit-script-btn">Edit</button>
                 </li>
                 {{/each}}
             </ul>
