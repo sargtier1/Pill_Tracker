@@ -1,5 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
 
+  // deleted 1 object and changed 1 name
+
     var Meds = sequelize.define('medications', {
       id: {
         autoIncrement: true,
@@ -10,15 +12,13 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      startDate: {
-        type: DataTypes.DATE,
+      startTime: {
+        type: DataTypes.STRING,
         allowNull: false
       },
-      length: {
-        type: DataTypes.INTEGER
-      },
       frequency: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          allowNull: false
       },
       notes: {
           type: DataTypes.STRING

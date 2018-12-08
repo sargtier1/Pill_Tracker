@@ -42,7 +42,7 @@ module.exports = function(app) {
   });
 
   //loads page of a single prescription
-  app.get("/home/:name", function(req, res) {
+  app.get("/home/1", function(req, res) {
     db.medications.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("prescription", {
         example: dbExample

@@ -2,15 +2,18 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/home", function(req, res) {
-    // db.medications.findAll({}).then(function(dbMedication) {
-    //   res.json(dbMedication);
+  app.get("/api/all/meds", function(req, res) {
+    db.medications.findAll({}).then(function(dbMedication) {
+      res.json(dbMedication);
 
-    //   // calculation 
+      // calculation 
+
+
+    });
    });
 
   // Create a new example
-  app.post("/api/medicine", function(req, res) {
+  app.post("/api/new/medicine", function(req, res) {
     db.medications.create(req.body).then(function(dbMedication) {
       res.json(dbMedication);
     });
