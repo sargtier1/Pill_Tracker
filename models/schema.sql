@@ -1,3 +1,4 @@
-DROP DATABASE IF EXISTS ptdb;
-CREATE DATABASE ptdb;
+DROP DATABASE IF EXISTS db1;
+CREATE DATABASE db1;
 
+insert into medications(drugName, )

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand" href="/home">Pill-Tracker</a>
+  <form class="form-inline">
+     <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </div>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+  </form>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Prescription Details</h5>
+          <p>
+            <strong>NAME</strong>: {{prescription.name}}</p>
+          <p>
+            <strong>FREQUENCY</strong>: {{prescription.hours}}</p>
+          <p>
+            <strong>START TIME</strong>: {{prescription.startTime}}</p>
+          <p>
+            <strong>NOTES:</strong> {{prescription.notes}}</p>
+            <a href="/cards">← Delete Prescription</a> {{! iffy on keeping this button. I'll sleep on it}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

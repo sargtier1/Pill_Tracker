@@ -3,13 +3,18 @@ var Joi = require('joi');
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/api/all/meds", function(req, res) {
+    db.medications.findAll({}).then(function(dbMedication) {
+      res.json(dbMedication);
+
+      // calculation 
+
+
     });
-  });
+   });
 
   // Create a new example
+<<<<<<< HEAD
   app.post("/api/examples", function(req, res) {
     var schema = Joi.object().keys({
       username: Joi.string().alphanum().min(3).max(30).required(),
@@ -22,12 +27,17 @@ module.exports = function(app) {
 
     db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
+=======
+  app.post("/api/new/medicine", function(req, res) {
+    db.medications.create(req.body).then(function(dbMedication) {
+      res.json(dbMedication);
+>>>>>>> 68d67b73f9d51926bb6a101fd309b45b74bde4c0
     });
   });
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.medications.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
   });
