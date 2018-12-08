@@ -27,17 +27,22 @@
                 <label for="name-input">Name:</label>
                 <input class="form-control" id="name-input" type="text">
             </div>
-            <div class="form-group row">
-                <label for="zip-input">How many hours apart do You Need To Take Your Medication?</label>
-                <input class="form-control" id="number-input" type="number">
+              <div class="form-group">
+                <label for="exampleInputEmail1">At what time do you plan on taking your first pill?</label><br>
+                <input type="time" id="time-input"  placeholder="ex: 8:00am">
             </div>
              <div class="form-group">
-                <label for="exampleInputEmail1">At what time do you plan on taking your first pill?</label><br>
-                <input type="time" id="time"  placeholder="ex: 8:00am">
+            <label for="exampleInputEmail1">How many hours apart are your meds?</label>
+                <select class="form-control" id="hourSpread">
+                    <option>Select Below</option>
+                    <option id = 'four' value = 4 >4</option>
+                    <option id = 'eight' value = 8 >8</option>
+                    <option id = 'twelve' value = 12 >12</option>
+                </select>
             </div>
             <div class="form-group row">
                 <label for="textTime-input">Notes</label>
-                <input class="form-control" id="dob-input" type="text">                             
+                <input class="form-control" id="notes-input" type="text">                             
             </div>
             <br>
             <button class="btn btn-success float-right" id="add-script-btn" type="submit">Submit</button>
@@ -47,5 +52,3 @@
 </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/logic.js"></script>
