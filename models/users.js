@@ -1,16 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
 
-  var Users = sequelize.define('users', {
+  var User = sequelize.define('user', {
     id: {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    firstname: {
+    firstName: {
       type: DataTypes.STRING,
       notEmpty: true
     },
-    lastname: {
+    lastName: {
       type: DataTypes.STRING,
       notEmpty: true
     },
@@ -31,6 +31,6 @@ module.exports = function (sequelize, DataTypes) {
 
   });
 
-  return Users;
+  return User;
 
 }
