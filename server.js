@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
  
-app.use(passport.session()); // persistent login sessions
+app.use(passport.session()); // persistent login sessionsz
 
 var db = require("./models");
 var authRoute = require('./routes/auth.js')(app, passport);

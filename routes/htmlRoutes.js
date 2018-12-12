@@ -50,8 +50,15 @@ module.exports = function(app) {
     });
   });
 
+ // Render signinfailure page for incorrect password
+  app.get("/signinfailure", function(req, res) {
+    res.render("signinfailure");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+ 
 };
