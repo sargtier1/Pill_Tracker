@@ -22,20 +22,22 @@ JOI.js
 
 Html/CSS
 
-Java script/Jquery
+Javascript/Jquery
 
 Express
 
 Handlebars
+
+Sequelize
 
 API Creation
 <br>
 
 <h4>Requirements</h4>
 
-* Use a Node and Express Web Server;
+* Use Node.Js and Express Web Server;
 
-* Be backed by a MySQL Database an ORM;
+* Be backed by a MySQL Database;
 
 * Have both GET and POST routes for retrieving and adding new data;
 
