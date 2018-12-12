@@ -12,9 +12,9 @@ module.exports = function(app) {
   });
 
   // route to sign up page 
-  app.get("/register", function(req, res) {
+  app.get("/signup", function(req, res) {
     db.medications.findAll({}).then(function(dbExamples) {
-      res.render("register", {
+      res.render("signup", {
         msg: "Welcome!",
         examples: dbExamples
       });
