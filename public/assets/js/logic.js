@@ -37,7 +37,6 @@ $(document).on("click","#add-script-btn", (e) => {
         .then((data)=> {
             console.log(data);
             window.location.href = '/home';
-            
         });
 
         // changes url to take us back home after the post method
