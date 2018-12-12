@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "Sammyarg1!",
+    "password": "password",
 
     "database": "db1",
     "host": "localhost",
