@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
       },
       startTime: {
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
       },
       frequency: {
           type: DataTypes.INTEGER,
