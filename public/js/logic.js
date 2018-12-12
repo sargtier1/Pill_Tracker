@@ -13,8 +13,9 @@ $(document).on("click", "#addPrescription", () => {
 
 // takes user to register page
 register.on('click', (e) => {
+    e.preventDefault();
     console.log('register btn success');
-    window.location.href = "/register";
+    window.location.href = "/signup";
 })
 
 // logic to grab med input and make into new object
@@ -34,8 +35,10 @@ $("#add-script-btn").on("click", (e) => {
             console.log(data)
         });
 
+        // changes url to take us back home after the post method
         window.location.href("/home");
 
+        // calcluations for timeing based on info the user gives us
         var pillTime = $('#time-input').val().trim();
         pillTime = moment(pillTime, 'hhmma');
  
@@ -54,6 +57,4 @@ $("#add-script-btn").on("click", (e) => {
         $('#pillTime1').text(moment(times1).format(' h:mm a')); 
         $('#pillTime2').text(moment(times2).format(' h:mm a'));
         $('#pillTime3').text(moment(times3).format(' h:mm a'));
-
-
 });
