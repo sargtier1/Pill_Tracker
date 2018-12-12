@@ -1,27 +1,41 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand" href="/home">Pill-Tracker</a>
-  <form class="form-inline">
-     <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/">Logout</a>
+    <a class="navbar-brand" href="/home">Pill-Tracker</a>
+    <form class="form-inline">
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/">Logout</a>
+            </div>
         </div>
-      </div>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
-  </form>
+        {{!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> --}}
+        {{!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button> --}}
+
+        <script>
+            (function () {
+                var cx = '009037153807159658389:dci-4bhfqs4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+        <gcse:searchbox-only></gcse:searchbox-only>
+    </form>
 </nav>
-   
+
 <br>
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <button type="button" id="addPrescription" class="btn btn-success btn-lg btn-block">+</button> 
+            <button type="button" id="addPrescription" class="btn btn-success btn-lg btn-block">+</button>
         </div>
     </div>
 </div>
@@ -31,21 +45,18 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-        <h4>Your Prescriptions:</h4>
+            <h4>Your Prescriptions:</h4>
             <ul id="prescription-list" class="list-group">
                 {{#each prescription}}
                 <li data-id="{{this.name}}" class="list-group-item">
-                <a href="home/{{this.name}}">{{this.name}}</a>
-                {{this.timeOne}}
-                {{this.timeTwo}}
-                {{this.timeThree}}
-                <button class="btn btn-success float-right update" id="edit-script-btn">Edit</button>
+                    <a href="home/{{this.name}}">{{this.name}}</a>
+                    {{this.timeOne}}
+                    {{this.timeTwo}}
+                    {{this.timeThree}}
+                    <button class="btn btn-success float-right update" id="edit-script-btn">Edit</button>
                 </li>
                 {{/each}}
             </ul>
         </div>
     </div>
 </div>
- 
-
-
