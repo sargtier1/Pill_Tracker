@@ -1,16 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
 
-  var Users = sequelize.define('users', {
+  var User = sequelize.define('user', {
     id: {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    firstname: {
+    firstName: {
       type: DataTypes.STRING,
       notEmpty: true
     },
-    lastname: {
+    lastName: {
       type: DataTypes.STRING,
       notEmpty: true
     },
@@ -25,12 +25,12 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     phoneNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(255),
       allowNull: true
     }
 
   });
 
-  return Users;
+  return User;
 
 }
