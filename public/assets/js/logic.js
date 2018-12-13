@@ -46,27 +46,5 @@ $(document).on("click","#add-script-btn", (e) => {
         });
 
         // changes url to take us back home after the post method
-
-        // window.location.href("/home");
-
-        // calcluations for timeing based on info the user gives us
-
-        // var pillTime = $('#time-input').val().trim();
-        // pillTime = moment(pillTime, 'hhmma');
- 
-        // var addThisTime = $('#hourSpread').val().trim();
- 
-        // var times1 = moment(pillTime).add(addThisTime, 'H');
-        // console.log('New Time is: ' + moment(times1).format(' HH'));
- 
-        // var times2 = moment(pillTime).add(addThisTime * 2, 'H');
-        // console.log('New Time is: ' + moment(times2).format(' H:mm a'));
- 
-        // var times3 = moment(pillTime).add(addThisTime * 3, 'H');
-        // console.log('New Time is: ' + moment(times3).format(' H:mm a'));
- 
-        // // needs to be editted to send the time to home.handlebars
-        // $('#pillTime1').text(moment(times1).format(' h:mm a')); 
-        // $('#pillTime2').text(moment(times2).format(' h:mm a'));
-        // $('#pillTime3').text(moment(times3).format(' h:mm a'));
+        window.location.href("/home");
 });

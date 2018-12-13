@@ -14,10 +14,30 @@ $.get('api/all', function(data){
 
     // Now  we add our book data to the well we just placed on the page
     //$("#book-well-" + i).append("<h5>" + (i + 1) + ". " + "</h5>");
-    $("#med-well-" + i).append("<h5>Name: " + data[i].drugName + "</h5>");
-    $("#med-well-" + i).append("<h5>Start Time: " + data[i].startTime + "</h5>");
-    $("#med-well-" + i).append("<h5>Frequency: " + data[i].frequency + "</h5>");
-    $("#med-well-" + i).append("<h5>Notes: " + data[i].notes + "</h5>");
-  }
-    
- })
+  
+
+
+    if (data[i].frequency === 12) {
+      $("#med-well-" + i).append("<div> Name: " + data[i].drugName + 
+      "\n<div> First Pill: " + data[i].startTime + "</div" + "<hr>");
+    }
+    if (data[i].frequency === 8) {
+      console.log(parseInt(data[i].startTime));
+      var newTime = parseInt(data[i].startTime) + 8;
+      console.log(newTime);
+      $("#med-well-" + i).append("<div> Name: " + data[i].drugName +
+        "\n<div>First Pill: " + data[i].startTime  +
+        "\n<div>Next Pill: " + newTime + "</div>" + "<hr>");
+  
+    }
+    if (data[i].frequency === 4) {
+      var newTime2 = parseInt(data[i].startTime) + 4;
+      var newTime3 = newTime2 + 4;
+
+      $("#med-well-" + i).append("<div> Name: " + data[i].drugName + 
+        "\n<div> First Pill: " + data[i].startTime + 
+        "\n<div> Next Pill: " + newTime2 +
+        "\n<div> Next Pill: " + newTime3 + "</div>" + "<hr>");
+    }
+  }  
+ });
