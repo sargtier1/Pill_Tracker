@@ -12,10 +12,24 @@
                 <a class="dropdown-item" href="/">Logout</a>
             </div>
         </div>
-        {{!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> --}}
-        {{!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button> --}}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> 
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button> 
+    </form>
+</nav>
 
-        <script>
+<br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <button type="button" id="addPrescription" class="btn btn-success btn-lg btn-block">+</button> 
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+        {{!-- <script>
             (function () {
                 var cx = '009037153807159658389:dci-4bhfqs4';
                 var gcse = document.createElement('script');
@@ -26,44 +40,34 @@
                 s.parentNode.insertBefore(gcse, s);
             })();
         </script>
-        <gcse:searchbox-only></gcse:searchbox-only>
-    </form>
-</nav>
-
-<br>
- 
-<div id = 'med-section' class = 'container'>
-    <h4>Your Prescriptions:</h4>
-</div>
-
-<button id = 'addPrescription' type="button" class="btn btn-primary">Add Medication</button>
-
-
-
-
-
-
-<!--GOING TO COMMENT OUT THE ENTIRE SECITON BELOW, Julio.
-
+        <gcse:searchbox-only></gcse:searchbox-only> --}}
 
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
             <h4>Your Prescriptions:</h4>
             
-            <ul id="prescription-list" class="list-group">
+
+            <div id = 'med-section' class = 'container'>
+    
+            </div>
+
+
+
+
+
+
+
+            {{!-- <ul id="prescription-list" class="list-group">
                 {{#each prescription}}
                 <li data-id="{{this.name}}" class="list-group-item">
-                    <a href="home/{{this.name}}">{{this.name}}</a>
-                    {{this.timeOne}}
-                    {{this.timeTwo}}
-                    {{this.timeThree}}
+                    <a href="home/{{this.id}}">{{this.name}}</a>
+                    {{this.times}} 
                     <button class="btn btn-success float-right update" id="edit-script-btn">Edit</button>
                 </li>
-                {{/each}}
+                {{/each}} --}}
             </ul>
         </div>
     </div>
 </div>
 
--->
