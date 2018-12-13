@@ -8,6 +8,12 @@ $(document).on("click", "#addPrescription", () => {
 
 });
 
+$(document).on("click", "#addPrescription", () => {
+    console.log('add script success');
+    window.location.href = "/home/add";
+
+});
+
 // takes user to register page
 $(document).on('click', "#sign-up-btn", (e) => {
     e.preventDefault();
