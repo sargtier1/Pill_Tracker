@@ -15,8 +15,6 @@ $.get('api/all', function(data){
     // Now  we add our book data to the well we just placed on the page
     //$("#book-well-" + i).append("<h5>" + (i + 1) + ". " + "</h5>");
   
-
-
     if (data[i].frequency === 12) {
       $("#med-well-" + i).append("<div> Name: " + data[i].drugName + 
       "\n<div> First Pill: " + data[i].startTime + "</div" + "<hr>");
@@ -28,7 +26,6 @@ $.get('api/all', function(data){
       $("#med-well-" + i).append("<div> Name: " + data[i].drugName +
         "\n<div>First Pill: " + data[i].startTime  +
         "\n<div>Next Pill: " + newTime + "</div>" + "<hr>");
-  
     }
     if (data[i].frequency === 4) {
       var newTime2 = parseInt(data[i].startTime) + 4;
