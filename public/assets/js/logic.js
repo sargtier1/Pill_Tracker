@@ -8,6 +8,12 @@ $(document).on("click", "#addPrescription", () => {
 
 });
 
+$(document).on("click", "#addPrescription", () => {
+    console.log('add script success');
+    window.location.href = "/home/add";
+
+});
+
 // takes user to register page
 $(document).on('click', "#sign-up-btn", (e) => {
     e.preventDefault();
@@ -35,7 +41,8 @@ $(document).on("click","#add-script-btn", (e) => {
 
     $.post("/api/new/medicine", newMed)
         .then((data)=> {
-            console.log(data)
+            console.log(data);
+            window.location.href = '/home';
         });
 
         // changes url to take us back home after the post method
