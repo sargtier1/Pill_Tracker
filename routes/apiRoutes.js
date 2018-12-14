@@ -72,13 +72,23 @@ module.exports = function(app) {
  
 
   // Delete a med by id
-  app.delete("/api/db/:id", function(req, res) {
-    db.medications.destroy({ 
-      where: { 
-        id: req.params.id 
-      } 
-    }).then(function() {
-      res.end();
-    });
+  app.put("/api/update/:id", function(req, res) {
+
+    db.medications.update(req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(results) {
+        res.json(results);
+      });
+    // db.medications.destroy({ 
+    //   where: { 
+    //     id: req.params.id 
+    //   } 
+    // }).then(function() {
+    //   res.end();
+    // });
   });
 };

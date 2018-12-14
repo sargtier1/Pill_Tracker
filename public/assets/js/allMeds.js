@@ -1,5 +1,5 @@
 $.get('api/all', function(data){
-    console.log(data);
+  console.log(data)
     // For each book that our server sends us back
   for (var i = 0; i < data.length; i++) {
 
@@ -26,7 +26,7 @@ $.get('api/all', function(data){
     $("#med-section").append(wellSection);
 
     // button variables
-    var editBtn = "<button id='edit-btn' class='btn btn-outline-info'>" + "Edit" + "</button>"
+    var editBtn = "<button id='edit-btn'" + "data-Number='" + data[i].id + "'" + "class='btn btn-outline-info'>" + "Edit" + "</button>"
     var deleteBtn = "<button id='delete-btn' class='btn btn-outline-danger float-right'>" + "Delete" + "</button>"
 
     if (data[i].frequency === 12) {
@@ -34,10 +34,10 @@ $.get('api/all', function(data){
       "\n<div> First Pill: " + data[i].startTime + "</div>" + "<br>");
       // edit button
       $("#med-well-" + i).append(editBtn);
-      $("#edit-btn").attr("id", "edit-btn-"+data[i].drugName);
+      // $("#edit-btn").attr("data-id", data[i].id);
       // delete button
       $("#med-well-" + i).append(deleteBtn + "\n<hr>");  
-      $("#delete-btn").attr("id", "delete-btn-"+data[i].drugName); 
+      $("#delete-btn").attr("data-id", data[i].id); 
 
     }
     if (data[i].frequency === 8) {
@@ -48,10 +48,10 @@ $.get('api/all', function(data){
         "\n<div>Next Pill: " + moment(newTime).format('h:mm a') + "</div>" + "<br>");
       // edit button
       $("#med-well-" + i).append(editBtn);
-      $("#edit-btn").attr("id", "edit-btn-"+data[i].drugName);
+      // $("#edit-btn").attr("data-id", data[i].id);
       // delete button
       $("#med-well-" + i).append(deleteBtn + "\n<hr>"); 
-      $("#delete-btn").attr("id", "delete-btn-"+data[i].drugName); 
+      $("#delete-btn").attr("data-id", data[i].id); 
     }
     if (data[i].frequency === 4) {
       var newTime2 = parseInt(data[i].startTime) + 4;
@@ -64,11 +64,11 @@ $.get('api/all', function(data){
 
       // edit button
       $("#med-well-" + i).append(editBtn);
-      $("#edit-btn").attr("id", "edit-btn-"+data[i].drugName);
+      // $("#edit-btn").attr("data-id", data[i].id);
 
       // delete button
       $("#med-well-" + i).append(deleteBtn + "\n<hr>"); 
-      $("#delete-btn").attr("id", "delete-btn-"+data[i].drugName); 
+      $("#delete-btn").attr("data-id", data[i].id); 
     }
   }  
  });
