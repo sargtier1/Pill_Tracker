@@ -4,7 +4,7 @@
 
     "password": "Sammyarg1!",
 
-    "database": "db1",
+    "database": "db2",
     "host": "localhost",
     "dialect": "mysql"
   },
