@@ -42,10 +42,10 @@ module.exports = function(app) {
   });
 
   //loads page of a single prescription
-  app.get("/home/1", function(req, res) {
-    db.medications.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/home/:id", function(req, res) {
+    db.medications.findOne({ where: { id: req.params.id } }).then(function(medications) {
       res.render("prescription", {
-        example: dbExample
+        example: medications
       });
     });
   });
