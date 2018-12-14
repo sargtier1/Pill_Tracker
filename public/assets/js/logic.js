@@ -3,11 +3,10 @@
 
 // constants used (used for query checking)
 //-----------------------------------------------------------------------
-var paramsString = window.location.search;
-var searchParams = new URLSearchParams(paramsString);
-var action = searchParams.get("state") 
-var editId = searchParams.get('id')
-var deleteId = searchParams.get('id')
+const paramsString = window.location.search;
+const searchParams = new URLSearchParams(paramsString);
+const action = searchParams.get("state") 
+
 // click events to change the URL that causes the HTML routes
 //                to render a certain page
 //-----------------------------------------------------------------------
@@ -40,6 +39,7 @@ $.get('api/all', function displayMedications (data){
     console.log(data)
       // For each book that our server sends us back
     for (var i = 0; i < data.length; i++) {
+    // dynamically creating cards for each script, and button for each script
       // Create container for all scripts
       var wellContainer = $("<div>");
           wellContainer.addClass("container");
@@ -52,48 +52,57 @@ $.get('api/all', function displayMedications (data){
       //  Creates the cards for each script
       var preCards = $("<div>");
           preCards.addClass("card met-4");
-      // 
+      // Creates the body for each card
       var wellSection = $("<div>");
-      // Add a class to this div: 'well'
-      wellSection.addClass("card-body");
-      // Add an id to the well to mark which well it is
+          wellSection.addClass("card-body");
+      // Add an id to the well to mark which well it is by index of the prescription within the API ojbect
       wellSection.attr("id", "med-well-" + i);
       // Append the well to the well section
       $("#med-section").append(wellSection);
   
-      // button variables in mega form
+      // button variables with all IDs, Classes, and Data types
       var editBtn = "<button id='edit-btn'" + "data-Number='" + data[i].id + "'" + "class='btn btn-outline-info'>" + "Edit" + "</button>"
       var deleteBtn = "<button id='delete-btn'" + "data-Number='" + data[i].id + "'" + "class='btn btn-outline-danger float-right'>" + "Delete" + "</button>"
+      var moreDetsBtn = "<button id='more-btn'" + "data-Number='" + data[i].id + "'" + "class='btn btn-outline-secondary float-middle'>" + "More Info" + "</button>"
+      var medWell = $("#med-well-" + i);
       // if statments that display medicine depending on how many times of day it it must be taken
       if (data[i].frequency === 12) {
-        $("#med-well-" + i).append("<div> Name: " + data[i].drugName + 
+        // displays the first time 
+        medWell.append("<div> Name: " + data[i].drugName + 
         "\n<div> First Pill: " + data[i].startTime + "</div>" + "<br>");
-        // edit button
-        $("#med-well-" + i).append(editBtn);
-        // delete button
-        $("#med-well-" + i).append(deleteBtn + "\n<hr>");  
+         // edit button
+         medWell.append(editBtn + " ");
+         // more info button 
+         medWell.append(moreDetsBtn);
+         // delete button
+         medWell.append(deleteBtn + "\n<hr>");   
       }
       if (data[i].frequency === 8) {
         var newTime = parseInt(data[i].startTime) + 8;
-        $("#med-well-" + i).append("<div> Name: " + data[i].drugName +
+        medWell.append("<div> Name: " + data[i].drugName +
           "\n<div>First Pill: " + data[i].startTime  +
           "\n<div>Next Pill: " + moment(newTime).format('h:mm a') + "</div>" + "<br>");
         // edit button
-        $("#med-well-" + i).append(editBtn);
+        medWell.append(editBtn + " ");
+        // more info button 
+        medWell.append(moreDetsBtn);
         // delete button
-        $("#med-well-" + i).append(deleteBtn + "\n<hr>"); 
+        medWell.append(deleteBtn + "\n<hr>"); 
       }
       if (data[i].frequency === 4) {
         var newTime2 = parseInt(data[i].startTime) + 4;
         var newTime3 = newTime2 + 4;
-        $("#med-well-" + i).append("<div> Name: " + data[i].drugName + 
+        
+        medWell.append("<div> Name: " + data[i].drugName + 
           "\n<div> First Pill: " + data[i].startTime + 
           "\n<div> Next Pill: " + moment(newTime2).format('h:mm a') +
           "\n<div> Next Pill: " + moment(newTime3).format('h:mm a') + "</div>" + "<br>");
-        // edit button
-        $("#med-well-" + i).append(editBtn);
-        // delete button
-        $("#med-well-" + i).append(deleteBtn + "\n<hr>"); 
+       // edit button
+       medWell.append(editBtn + " ");
+       // more info button 
+       medWell.append(moreDetsBtn);
+       // delete button
+       medWell.append(deleteBtn + "\n<hr>"); 
       }
     }  
    });
@@ -103,7 +112,7 @@ $.get('api/all', function displayMedications (data){
 // when edit button is hit creates a query string to allow 
 //         editing from the original submit page
 $(document).on("click", ".btn-outline-info", function() {
-    var editId = $(this).data("number");
+    const editId = $(this).data("number");
     location.replace('/home/add?state=edit&id=' + editId) 
 });
 // because we are using the same button to add, and edit medications we 
@@ -154,7 +163,7 @@ if (action === 'edit') {
 //-----------------------------------------------------------------------
 $(document).on("click", ".btn-outline-danger", function (e) {
     e.preventDefault();
-    var deleteId = $(this).data("number");
+    const deleteId = $(this).data("number");
     $.ajax({
         method: "DELETE",
         url: "/api/all/" + deleteId,

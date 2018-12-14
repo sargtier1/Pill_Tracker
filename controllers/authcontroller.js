@@ -26,3 +26,6 @@ exports.logout = function (req, res) {
     });
 
 }
+
+// this was the page we needed to use to have the special handlebars pages show up. Very Tricky to do so I'm glad we didn't 
+
