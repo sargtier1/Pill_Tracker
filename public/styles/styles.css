@@ -2,6 +2,10 @@
   line-height: 2.5;
 }
 
+#log-in-btn {
+  margin-right: 10px;
+}
+
 /* 
 .list-group-item {
   line-height: 2.5;
