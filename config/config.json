@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "maepmzac0dsisp8x",
-    "password": "wabw65b72etk41rn",
-    "database": "x4txjawre933zx91",
-    "host": "enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "e8zx7fmbjzd1m2zi",
+    "password": "kohod0c2hv0ilxy4",
+    "database": "s6xya1li033pk2b2",
+    "host": "y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
