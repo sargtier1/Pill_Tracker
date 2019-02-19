@@ -3,7 +3,7 @@ Pill Tracker is an application that allows the user to manage their medication u
 Pill Tracker lets the user take control of tracking their medication intake thus 
 eliminating the anxiety that comes with taking a lot of medication.
 
-Click the link below to checkout the application!
+Click the link to checkout the application!
 https://protected-falls-89358.herokuapp.com/
 
 <h4>Created By:</h4>
